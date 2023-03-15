@@ -38,7 +38,7 @@ const server = app.listen(port, function() {
 io = require("socket.io")(server, {
     pingTimeout: 60000,
     cors: {
-      origin: "http://localhost:3000",
+      origin: ["http://localhost:3000", "https://screentime.onrender.com"],
       // credentials: true,
     },
   });
