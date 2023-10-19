@@ -1,39 +1,39 @@
-const path = require('path')
-const express = require('express');
-const connectDB = require('./config/db');
-const dotenv = require('dotenv').config()
-const cors = require('cors')
-const port = process.env.PORT || 5000
-const app = express();
-app.use(cors())
-console.log("asd");
-connectDB()
+// const path = require('path')
+// const express = require('express');
+// const connectDB = require('./config/db');
+// const dotenv = require('dotenv').config()
+// const cors = require('cors')
+// const port = process.env.PORT || 5000
+// const app = express();
+// app.use(cors())
+// console.log("asd");
+// connectDB()
 
-app.use('/api/apps', require('./routes/appRoutes'))
+// app.use('/api/apps', require('./routes/appRoutes'))
 
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static(path.join(__dirname, '../frontend/build')))
+// // if (process.env.NODE_ENV === 'production') {
+// //     app.use(express.static(path.join(__dirname, '../frontend/build')))
   
-//     app.get('*', (req, res) =>
-//       res.sendFile(
-//         path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
-//       )
-//     )
-// } else {
-//     // app.get('/', (req, res) => res.send('Please set to production'))
+// //     app.get('*', (req, res) =>
+// //       res.sendFile(
+// //         path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
+// //       )
+// //     )
+// // } else {
+// //     // app.get('/', (req, res) => res.send('Please set to production'))
 
-//     // app.use(express.static(path.join(__dirname, '../frontend/build')))
+// //     // app.use(express.static(path.join(__dirname, '../frontend/build')))
   
-//     // app.get('*', (req, res) =>
-//     //   res.sendFile(
-//     //     path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
-//     //   )
-//     // )
-// }
+// //     // app.get('*', (req, res) =>
+// //     //   res.sendFile(
+// //     //     path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
+// //     //   )
+// //     // )
+// // }
 
-const server = app.listen(port, function() {
-    console.log(`Server started on port ${port}`)
-})
+// const server = app.listen(port, function() {
+//     console.log(`Server started on port ${port}`)
+// })
 
 
 
@@ -52,3 +52,17 @@ const server = app.listen(port, function() {
 //       console.log("User Disconnected", socket.id);
 //     });
 // });
+
+
+
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
