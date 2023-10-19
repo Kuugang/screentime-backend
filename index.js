@@ -55,14 +55,17 @@
 
 
 
-const express = require('express');
+// Import packages
+const express = require("express");
+const home = require("./routes/home");
+
+// Middlewares
 const app = express();
-const port = process.env.PORT || 3000;
+app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
+// Routes
+app.use("/home", home);
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+// connection
+const port = process.env.PORT || 9001;
+app.listen(port, () => console.log(`Listening to port ${port}`));
