@@ -5,6 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +23,6 @@
   "devDependencies": {
     "concurrently": "^7.2.0",
     "gh-pages": "^5.0.0",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.22"
   }
 }
