@@ -40,11 +40,10 @@ const server = app.listen(port, function() {
 io = require("socket.io")(server, {
     pingTimeout: 60000,
     cors: {
-      origin: ["http://localhost:3000", "https://screentime.onrender.com"],
+      origin: ["http://localhost:3000", "https://screentime-frontend.vercel.app"],
       // credentials: true,
     },
   });
-
 io.on("connection", (socket) => {
     console.log(`User Connected: ${socket.id}`);
   
@@ -52,20 +51,3 @@ io.on("connection", (socket) => {
       console.log("User Disconnected", socket.id);
     });
 });
-
-
-
-// Import packages
-// const express = require("express");
-// const home = require("./routes/home");
-
-// // Middlewares
-// const app = express();
-// app.use(express.json());
-
-// // Routes
-// app.use("/home", home);
-
-// // connection
-// const port = process.env.PORT || 9001;
-// app.listen(port, () => console.log(`Listening to port ${port}`));
